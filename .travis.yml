@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - '8'
+  - '10'
 
 jobs:
   include:
@@ -16,4 +16,4 @@ jobs:
         - npm run build-lib
         - cp README.md dist/ngx-typed-router
         - cp LICENSE.md dist/ngx-typed-router
-        - npm run semantic-release
+        - npx semantic-release
