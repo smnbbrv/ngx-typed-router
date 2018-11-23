@@ -1,26 +1,30 @@
 {
-  "verifyConditions": [
+  "plugins": [
     "@semantic-release/github",
-    "@semantic-release/npm",
     "@semantic-release/changelog",
-    "@semantic-release/git"
-  ],
-  "prepare": [
-    "@semantic-release/npm",
-    "@semantic-release/changelog",
-    {
-      "path": "@semantic-release/git",
-      "assets": [
-        "CHANGELOG.md"
-      ],
-      "message": "chore(release): ${nextRelease.version} [ci skip]"
-    }
-  ],
-  "publish": [
-    "@semantic-release/github",
-    {
-      "path": "@semantic-release/npm",
-      "pkgRoot": "dist/ngx-typed-router"
-    }
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "dist/ngx-typed-router"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "package.json",
+          "npm-shrinkwrap.json"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [ci skip]"
+      }
+    ]
   ]
 }
