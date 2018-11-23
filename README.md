@@ -10,6 +10,10 @@ The same Angular router. Just a little bit more types.
 npm i ngx-typed-router
 ```
 
+## Usage
+
+Coming soon
+
 ## License
 
 MIT
