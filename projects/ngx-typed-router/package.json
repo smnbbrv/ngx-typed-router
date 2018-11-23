@@ -1,0 +1,16 @@
+{
+  "name": "ngx-typed-router",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "smnbbrv",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smnbbrv/ngx-typed-router"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=7.0.0",
+    "@angular/common": ">=7.0.0",
+    "@angular/router": ">=7.0.0",
+    "rxjs": ">=6.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - '8'
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - npm run lint-lib
+        # - npm run test-lib
+    - stage: deploy
+      on:
+        branch: master
+      script:
+        - npm run build-lib
+        - cp README.md dist/ngx-typed-router
+        - cp LICENSE.md dist/ngx-typed-router
+        - npm run semantic-release
