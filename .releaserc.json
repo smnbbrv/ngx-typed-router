@@ -23,7 +23,7 @@
         "assets": [
           "CHANGELOG.md"
         ],
-        "message": "chore(release): ${nextRelease.version} [ci skip]"
+        "message": "chore: release ${nextRelease.version} [ci skip]"
       }
     ]
   ]
