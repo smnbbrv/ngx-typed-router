@@ -3,6 +3,10 @@ language: node_js
 node_js:
   - '10'
 
+branches:
+  only:
+    - master
+
 jobs:
   include:
     - stage: test
@@ -10,8 +14,6 @@ jobs:
         - npm run lint-lib
         # - npm run test-lib
     - stage: deploy
-      on:
-        branch: master
       script:
         - npm run build-lib
         - cp README.md dist/ngx-typed-router
