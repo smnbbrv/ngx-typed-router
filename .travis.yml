@@ -23,6 +23,7 @@ jobs:
         - npm run lint
         - npm run test:app:ci
         - npm run test:lib:ci
+        - npm run coveralls
     - stage: deploy
       script:
         - npm run build:lib
