@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
-    "build-lib": "ng build ngx-typed-router",
-    "test": "ng test",
-    "test-lib": "ng test ngx-typed-router",
+    "build:app": "ng build --prod",
+    "build:lib": "ng build ngx-typed-router",
+    "test:app": "ng test ngx-typed-router-app",
+    "test:app:ci": "ng test ngx-typed-router-app --watch=false --progress=false --browsers=ChromeHeadlessCI",
+    "test:lib": "ng test ngx-typed-router",
+    "test:lib:ci": "ng test ngx-typed-router --watch=false --progress=false --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "lint-lib": "ng lint ngx-typed-router",
     "e2e": "ng e2e"
   },
   "private": true,

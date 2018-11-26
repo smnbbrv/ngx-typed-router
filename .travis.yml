@@ -1,7 +1,16 @@
+dist: trusty
+sudo: false
 language: node_js
 
 node_js:
   - '10'
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 branches:
   only:
@@ -11,11 +20,12 @@ jobs:
   include:
     - stage: test
       script:
-        - npm run lint-lib
-        # - npm run test-lib
+        - npm run lint
+        - npm run test:app:ci
+        - npm run test:lib:ci
     - stage: deploy
       script:
-        - npm run build-lib
+        - npm run build:lib
         - cp README.md dist/ngx-typed-router
         - cp LICENSE.md dist/ngx-typed-router
         - npx semantic-release
