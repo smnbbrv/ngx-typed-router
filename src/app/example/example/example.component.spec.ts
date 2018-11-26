@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ExampleComponent } from './example.component';
-import { TypedRoute } from '../../../../dist/ngx-typed-router/lib/types';
-import { ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery } from '../example.routes';
 import { ActivatedRoute } from '@angular/router';
+import { TypedRoute } from '../../../../projects/ngx-typed-router/src/public_api';
+import { ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery } from '../example.routes';
+import { ExampleComponent } from './example.component';
 
 const MockRoute = {
   snapshot: {
