@@ -9,7 +9,8 @@
     "test:app": "ng test ngx-typed-router-app",
     "test:app:ci": "ng test ngx-typed-router-app --watch=false --progress=false --browsers=ChromeHeadlessCI",
     "test:lib": "ng test ngx-typed-router",
-    "test:lib:ci": "ng test ngx-typed-router --watch=false --progress=false --browsers=ChromeHeadlessCI",
+    "test:lib:ci": "ng test ngx-typed-router --watch=false --progress=false --browsers=ChromeHeadlessCI --code-coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -40,6 +41,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "coveralls": "^3.0.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
