@@ -4,8 +4,8 @@ The same Angular router with types for router configuration, resolvers, componen
 
 Finally, the type-safe routes with IDE hints and refactoring support.
 
-[![Build Status](https://travis-ci.org/smnbbrv/ngx-typed-router.svg?branch=master)](https://travis-ci.org/smnbbrv/ngx-typed-router)
-[![Coverage Status](https://coveralls.io/repos/github/smnbbrv/ngx-typed-router/badge.svg?branch=master)](https://coveralls.io/github/smnbbrv/ngx-typed-router?branch=master)
+[![Build Status](https://img.shields.io/travis/smnbbrv/ngx-typed-router/master.svg)](https://travis-ci.org/smnbbrv/ngx-typed-router)
+[![Coverage Status](https://img.shields.io/coveralls/github/smnbbrv/ngx-typed-router/master.svg)](https://coveralls.io/github/smnbbrv/ngx-typed-router?branch=master)
 
 ## Installation
 
