@@ -12,15 +12,6 @@
       "@semantic-release/git",
       {
         "assets": [
-          "package.json",
-          "npm-shrinkwrap.json"
-        ]
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
           "CHANGELOG.md"
         ],
         "message": "chore: release ${nextRelease.version} [ci skip]"
