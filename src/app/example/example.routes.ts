@@ -13,11 +13,11 @@ export const ExampleRoutes: Routes = [
   },
 ];
 
-export interface ExampleTestRouteQuery extends Params {
+export interface ExampleTestRouteQuery {
   param1: string;
 }
 
-export interface ExampleTestRoutePath extends Params {
+export interface ExampleTestRoutePath {
   id: string;
 }
 
