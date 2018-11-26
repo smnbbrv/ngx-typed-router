@@ -6,7 +6,7 @@
     [
       "@semantic-release/npm",
       {
-        "pkgRoot": "dist/ngx-reverse-rest"
+        "pkgRoot": "dist/ngx-typed-router"
       }
     ],
     [
