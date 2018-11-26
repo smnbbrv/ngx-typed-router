@@ -63,7 +63,14 @@ export class ExampleComponent {
 }
 ```
 
-and tests for this component: 
+so that is typed even in your template:
+
+```html
+<div>{{ route.snapshot.data.exampleResponse.id }}</div>
+<div>{{ route.snapshot.data.exampleResponse.name }}</div>
+```
+
+and even in tests for this component: 
 
 ```ts
 const MockRoute = {
