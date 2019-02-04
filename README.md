@@ -73,8 +73,8 @@ so that is typed even in your template:
 and even in tests for this component: 
 
 ```ts
-const MockRoute = {
-  snapshot: {
+class ActivatedRouteMock implements TypedRouteMock<ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery> {
+  snapshot = {
     queryParams: {
       param1: 'somename',
     },
@@ -87,8 +87,12 @@ const MockRoute = {
         name: 'somename',
       },
     },
-  }
-} as TypedRoute<ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery>;
+  };
+
+  queryParams = of(this.snapshot.queryParams);
+  params = of(this.snapshot.params);
+  data = of(this.snapshot.data);
+}
 
 describe('ExampleComponent', () => {
   let component: ExampleComponent;
@@ -98,13 +102,27 @@ describe('ExampleComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ExampleComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: MockRoute }
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock }
       ],
     })
       .compileComponents();
   }));
 
-  // ...
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ExampleComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should render two divs containing id and name', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div:first-child').textContent).toContain('123');
+    expect(compiled.querySelector('div:last-child').textContent).toContain('somename');
+  });
 });
 ```
 

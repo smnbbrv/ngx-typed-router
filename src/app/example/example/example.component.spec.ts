@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
-import { TypedRoute } from '../../../../projects/ngx-typed-router/src/public_api';
+import { of } from 'rxjs';
+import { TypedRouteMock } from '../../../../projects/ngx-typed-router/src/public_api';
 import { ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery } from '../example.routes';
 import { ExampleComponent } from './example.component';
 
-const MockRoute = {
-  snapshot: {
+class ActivatedRouteMock implements TypedRouteMock<ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery> {
+  snapshot = {
     queryParams: {
       param1: 'somename',
     },
@@ -18,8 +19,12 @@ const MockRoute = {
         name: 'somename',
       },
     },
-  }
-} as TypedRoute<ExampleTestRouteData, ExampleTestRoutePath, ExampleTestRouteQuery>;
+  };
+
+  queryParams = of(this.snapshot.queryParams);
+  params = of(this.snapshot.params);
+  data = of(this.snapshot.data);
+}
 
 describe('ExampleComponent', () => {
   let component: ExampleComponent;
@@ -29,7 +34,7 @@ describe('ExampleComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ExampleComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: MockRoute }
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock }
       ],
     })
       .compileComponents();
