@@ -21,10 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: |
-          - npm run build:lib
-          - cp README.md dist/ngx-typed-router
-          - cp LICENSE.md dist/ngx-typed-router
+        run: npm run build:lib && cp README.md dist/ngx-typed-router && cp LICENSE.md dist/ngx-typed-router
       - name: Publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
